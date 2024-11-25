@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+}
+
+.main-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.loan-graphs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.graph-card {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin-right: 10px;
+}
+
+.graph-card:last-child {
+    margin-right: 0;
+}
+
+.loan-lists {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-section {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.list-section:last-child {
+    margin-right: 0;
+}
+
+.loan-list {
+    list-style: none;
+    padding: 0;
+}
+
+.loan-list li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.loan-requests {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #8e3e3e;
+    color: white;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #8e3e3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #6f2c2c;
+}
+
+.btn-paid, .btn-non-paid {
+    margin-top: 10px;
+    transition: transform 0.3s;
+}
+
+.btn-paid:hover, .btn-non-paid:hover {
+    transform: scale(1.05);
+}

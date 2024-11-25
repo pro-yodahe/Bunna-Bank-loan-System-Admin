@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- <header class="header">
+            <h1>Admin Dashboard</h1>
+            <div class="user-info">
+                <img src="profile.jpg" alt="Profile" class="profile-pic">
+                <span class="username">Admin</span>
+                <div class="notifications">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
+        </header> -->
+        
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <h1 class="logo">Buna Bank</h1>
+                    <li><a href="/page/admin.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="/page/user_man.html"><i class="fas fa-users"></i> User Management</a></li>
+                    <li><a href="/page/loan.html"><i class="fas fa-chart-line"></i>Loan Management</a></li>
+                    <li><a href="/page/help.html"><i class="fas fa-chart-line"></i>Help And Suport</a></li>
+                    <li><a href="/page/settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="main-content">
+            <div class="slider">
+                <!-- <div class="slide active">📈 User Growth: +25%</div>
+                <div class="slide">💰 Revenue: $12,000</div>
+                <div class="slide">👥 Active Sessions: 150</div> -->
+            </div>
+
+            <div class="charts">
+                <div class="chart">
+                    <h2>User Growth Over Time</h2>
+                    <canvas id="userGrowthChart"></canvas>
+                </div>
+                <div class="chart">
+                    <h2>Revenue Comparison</h2>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h2>Project Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;">50%</div>
+                </div>
+            </div>
+
+            <div class="user-list">
+                <div class="user-search">
+                    <input type="text" placeholder="Search users..." id="userSearch" />
+                </div>
+                <div class="user-cards">
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 1" />
+                        <h3>User 1</h3>
+                        <p>Status: Active</p>
+                        <button>Edit</button>
+                        <button>Deactivate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                                        <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <div class="user-card">
+                        <img src="profile.jpg" alt="User 2" />
+                        <h3>User 2</h3>
+                        <p>Status: Inactive</p>
+                        <button>Edit</button>
+                        <button>Activate</button>
+                    </div>
+                    <!-- Repeat for more users -->
+                </div>
+            </div>
+        </main>
+    </div>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/app/script.js"></script>
+</body>
+</html>

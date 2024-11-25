@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Management System</title>
+    <link rel="stylesheet" href="/style/loan.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <h1 class="logo">Buna Bank</h1>
+                    <li><a href="/page/admin.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="/page/user_man.html"><i class="fas fa-users"></i> User Management</a></li>
+                    <li><a href="/page/loan.html"><i class="fas fa-chart-line"></i> Loan Management</a></li>
+                    <li><a href="/page/help.html"><i class="fas fa-chart-line"></i> Help And Support</a></li>
+                    <li><a href="/page/settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Loan Management</h1>
+            </header>
+
+            <section class="loan-graphs">
+                <div class="graph-card">
+                    <h2>Loan Status</h2>
+                    <canvas id="loanStatusChart"></canvas>
+                </div>
+                <div class="graph-card">
+                    <h2>Loan Growth</h2>
+                    <canvas id="loanGrowthChart"></canvas>
+                </div>
+            </section>
+
+            <section class="loan-lists">
+                <div class="list-section">
+                    <h2>Paid Loans</h2>
+                    <ul class="loan-list paid-list">
+                        <li>User A</li>
+                        <li>User B</li>
+                    </ul>
+                    <button class="btn-paid">View Paid Loans</button>
+                </div>
+
+                <div class="list-section">
+                    <h2>Non-Paid Loans</h2>
+                    <ul class="loan-list non-paid-list">
+                        <li>User C</li>
+                        <li>User D</li>
+                    </ul>
+                    <button class="btn-non-paid">View Non-Paid Loans</button>
+                </div>         
+            </section>
+
+            <main class="main-content">
+                <header class="header">
+                    <h1>Loan Requests</h1>
+                </header>
+
+                <section class="loan-requests">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="loanRequestTable">
+                            <tr>
+                                <td>User E</td>
+                                <td>$5000</td>
+                                <td>Pending</td>
+                                <td><button>Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </main>
+    </div>
+
+    <script src="/app/loan.js"></script>
+</body>
+</html>

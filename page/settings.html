@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/setting.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <h1 class="logo">Buna Bank</h1>
+                    <li><a href="/page/admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="/page/user_man.html"><i class="fas fa-users"></i> User Management</a></li>
+                    <li><a href="/page/loan.html"><i class="fas fa-chart-line"></i> Loan Management</a></li>
+                    <li><a href="/page/settings.html" class="active"><i class="fas fa-cogs"></i> Settings</a></li>
+                    <li><a href="/page/help.html"><i class="fas fa-chart-line"></i> Help And Support</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Settings</h1>
+            </header>
+        
+            <section class="settings-cards">
+                <div class="card">
+                    <h3>Account Settings</h3>
+                    <p>Manage your account preferences.</p>
+                </div>
+                <div class="card">
+                    <h3>Security</h3>
+                    <p>Update your password and security options.</p>
+                </div>
+                <div class="card">
+                    <h3>Notifications</h3>
+                    <p>Manage your notification preferences.</p>
+                </div>
+                <div class="card">
+                    <h3>Appearance</h3>
+                    <p>Customize the look and feel of the app.</p>
+                </div>
+                <div class="card">
+                    <h3>Privacy</h3>
+                    <p>Review and update privacy settings.</p>
+                </div>
+                <div class="card">
+                    <h3>Language</h3>
+                    <p>Set your preferred language.</p>
+                </div>
+                <div class="card">
+                    <h3>Support</h3>
+                    <p>Get help and find FAQs.</p>
+                </div>
+                <div class="card">
+                    <h3>Billing</h3>
+                    <p>Manage billing and payment methods.</p>
+                </div>
+                <div class="card">
+                    <h3>Integrations</h3>
+                    <p>Manage external app integrations.</p>
+                </div>
+            </section>
+        </main>
+        
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Settings</h2>
+            <div id="modal-body">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/app/setting.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Loan Management System</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/loan.css">
+    <style>
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f8f8fb;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .upload-section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .upload-section h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #af4c4c;
+        }
+
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-form input[type="file"] {
+            margin-bottom: 15px;
+        }
+
+        .upload-form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+            height: 100px;
+        }
+
+        .submit-btn {
+            padding: 10px 15px;
+            background-color: #af4c4c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #a04545;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        #charts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .chart-container {
+            width: 48%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <h1 class="logo">Buna Bank</h1>
+                    <li><a href="/page/admin.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="/page/user_man.html"><i class="fas fa-users"></i> User Management</a></li>
+                    <li><a href="/page/loan.html"><i class="fas fa-chart-line"></i> Loan Management</a></li>
+                    <li><a href="/page/help.html"><i class="fas fa-chart-line"></i> Help And Support</a></li>
+                    <li><a href="/page/settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Help & Support</h1>
+            </header>
+
+            <section class="upload-section">
+                <h2>Upload News</h2>
+                <form id="uploadForm" class="upload-form">
+                    <input type="file" id="newsImage" required>
+                    <textarea id="newsText" placeholder="Write some text about the news..." required></textarea>
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <div class="error-message" id="errorMessage" style="display: none;"></div>
+                </form>
+            </section>
+
+            <div id="charts">
+                <div class="chart-container">
+                    <canvas id="userGrowthChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx1 = document.getElementById('userGrowthChart').getContext('2d');
+        const userGrowthChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Users',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 2,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [3000, 5000, 7000, 9000],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const newsImage = document.getElementById('newsImage').value;
+            const newsText = document.getElementById('newsText').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (!newsText.trim()) {
+                errorMessage.textContent = "Please write some text about the news.";
+                errorMessage.style.display = "block";
+                return;
+            } else {
+                errorMessage.style.display = "none";
+            }
+
+            alert(`News submitted!\nText: ${newsText}\nImage: ${newsImage}`);
+            document.getElementById('uploadForm').reset();
+        });
+    </script>
+</body>
+</html>
